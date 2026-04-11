@@ -1,8 +1,9 @@
-import Image from "next/image";
+﻿import Image from "next/image";
+import type { Lang } from "@/components/i18n";
 
 const MARKETPLACE_URL = "https://github.com/marketplace";
 
-export function Hero() {
+export function Hero({ lang }: { lang: Lang }) {
   return (
     <section className="py-20 px-6 max-w-5xl mx-auto">
       <div className="flex flex-col items-center text-center">
@@ -12,6 +13,7 @@ export function Hero() {
             alt="ZÊNITE Logo"
             width={420}
             height={420}
+            priority
           />
         </div>
 
@@ -20,7 +22,9 @@ export function Hero() {
         </h1>
 
         <p className="mt-6 max-w-2xl text-lg sm:text-xl text-white/80 leading-relaxed">
-          A INTELIGÊNCIA QUE ELEVA SUAS DECISÕES
+          {lang === "pt"
+            ? "A INTELIGÊNCIA QUE ELEVA SUAS DECISÕES"
+            : "THE INTELLIGENCE THAT ELEVATES YOUR DECISIONS"}
         </p>
 
         <div className="mt-8 h-px w-32 bg-white/20" />
@@ -31,17 +35,18 @@ export function Hero() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Instalar no GitHub Marketplace
+          {lang === "pt"
+            ? "Instalar no GitHub Marketplace"
+            : "Install on GitHub Marketplace"}
         </a>
 
         <a
           className="mt-6 text-sm text-white/60 hover:text-white/80 transition"
           href="#install"
         >
-          Ver como instalar
+          {lang === "pt" ? "Ver como instalar" : "See how to install"}
         </a>
       </div>
     </section>
   );
 }
-
