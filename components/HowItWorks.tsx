@@ -1,17 +1,41 @@
 ﻿import type { Lang } from "@/components/i18n";
+import type { ReactNode } from "react";
+
+const TEMPLATE_URL = "#";
 
 type UsageItem = {
   title: string;
-  description: string;
+  description: ReactNode;
 };
 
 function getUsage(lang: Lang): UsageItem[] {
   if (lang === "en") {
     return [
       {
+        title: 'Through GitHub Projects',
+        description: (
+          <>
+            Use the optional Scrum template:{" "}
+            <a
+              className="text-white/80 underline underline-offset-4 hover:text-white transition"
+              href={TEMPLATE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Template link
+            </a>
+            . Or create an <strong>"Estimate"</strong> label to trigger the flow.
+          </>
+        ),
+      },
+      {
         title: 'Add the "Estimate" label',
-        description:
-          'Apply the "Estimate" label to the issue you want to estimate to trigger the estimation flow.',
+        description: (
+          <>
+            Apply the <strong>"Estimate"</strong> label to the issue you want
+            to estimate to trigger the estimation flow.
+          </>
+        ),
       },
       {
         title: "Generate an estimate",
@@ -23,19 +47,35 @@ function getUsage(lang: Lang): UsageItem[] {
         description:
           "Refine the suggestion with your team—humans keep the final decision.",
       },
-      {
-        title: "Fit into Scrum",
-        description:
-          "Use it during planning and learn from execution to improve over time.",
-      },
     ];
   }
 
   return [
     {
+      title: 'Através do GitHub Projects',
+      description: (
+        <>
+          Use o template Scrum (opcional):{" "}
+          <a
+            className="text-white/80 underline underline-offset-4 hover:text-white transition"
+            href={TEMPLATE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Link do template
+          </a>
+          . Ou crie a label <strong>"Estimate"</strong> para ativar o fluxo.
+        </>
+      ),
+    },
+    {
       title: 'Adicionar label "Estimate"',
-      description:
-        'Aplique a label "Estimate" na issue que você quer estimar para disparar o fluxo de estimativa.',
+      description: (
+        <>
+          Aplique a label <strong>"Estimate"</strong> na issue que você quer
+          estimar para disparar o fluxo de estimativa.
+        </>
+      ),
     },
     {
       title: "Gerar estimativa",
@@ -46,11 +86,6 @@ function getUsage(lang: Lang): UsageItem[] {
       title: "Ajustar resultado",
       description:
         "Refine a sugestão com o time, mantendo a decisão final humana e alinhada.",
-    },
-    {
-      title: "Integrar no fluxo Scrum",
-      description:
-        "Use a estimativa no planning e acompanhe a execução para melhorar continuamente.",
     },
   ];
 }

@@ -12,10 +12,10 @@ function getSteps(lang: Lang): Step[] {
   if (lang === "en") {
     return [
       {
-        title: "Open GitHub Marketplace",
+        title: "Click the install link",
         description: (
           <>
-            Go to{" "}
+            Click this link to open the Zenite listing:{" "}
             <a
               className="text-white/80 underline underline-offset-4 hover:text-white transition"
               href={MARKETPLACE_URL}
@@ -29,13 +29,13 @@ function getSteps(lang: Lang): Step[] {
         ),
       },
       {
-        title: 'Search for "Zenite"',
+        title: "Organization only",
         description:
-          "Find the plugin and review the details and required permissions.",
+          "Zenite works only on GitHub organizations, personal repositories are not supported.",
       },
       {
         title: "Click install",
-        description: "Choose the account/organization and continue the setup.",
+        description: "Choose the organization account and continue the setup.",
       },
       {
         title: "Authorize repository access",
@@ -47,10 +47,10 @@ function getSteps(lang: Lang): Step[] {
 
   return [
     {
-      title: "Acesse o GitHub Marketplace",
+      title: "Clique no link de instalação",
       description: (
         <>
-          Abra o{" "}
+          Clique neste link para abrir a página do Zênite:{" "}
           <a
             className="text-white/80 underline underline-offset-4 hover:text-white transition"
             href={MARKETPLACE_URL}
@@ -64,14 +64,13 @@ function getSteps(lang: Lang): Step[] {
       ),
     },
     {
-      title: 'Busque por "Zênite"',
+      title: "Apenas para organizações",
       description:
-        "Encontre o plugin e confira os detalhes e permissões necessárias.",
+        "O Zênite funciona somente em organizações do GitHub, repositórios pessoais não são suportados.",
     },
     {
       title: "Clique em instalar",
-      description:
-        "Selecione a organização/conta e avance no fluxo de instalação.",
+      description: "Escolha a organização/conta e continue o fluxo de instalação.",
     },
     {
       title: "Autorize o acesso ao repositório",
