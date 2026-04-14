@@ -1,7 +1,7 @@
 ﻿import type { Lang } from "@/components/i18n";
 import type { ReactNode } from "react";
 
-const TEMPLATE_URL = "#";
+const TEMPLATE_URL = "https://github.com/orgs/Zenite-Organization/projects/5/views/1";
 
 type UsageItem = {
   title: string;

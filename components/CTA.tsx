@@ -1,6 +1,6 @@
 ﻿import type { Lang } from "@/components/i18n";
 
-const MARKETPLACE_URL = "https://github.com/marketplace";
+const MARKETPLACE_URL = "https://github.com/apps/zeniteai";
 
 export function CTA({ lang }: { lang: Lang }) {
   return (
